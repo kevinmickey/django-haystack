@@ -726,8 +726,8 @@ class ElasticsearchSearchBackend(BaseSearchBackend):
 #            the right type of storage?
 DEFAULT_FIELD_MAPPING = {'type': 'string', 'analyzer': 'snowball'}
 FIELD_MAPPINGS = {
-    'edge_ngram': {'type': 'string', 'analyzer': 'edgengram_analyzer'},
-    'ngram':      {'type': 'string', 'analyzer': 'ngram_analyzer'},
+    'edge_ngram': {'type': 'string', 'index_analyzer': 'edgengram_analyzer', 'search_analyzer': 'standard'},
+    'ngram':      {'type': 'string', 'index_analyzer': 'ngram_analyzer', 'search_analyzer': 'standard'},
     'date':       {'type': 'date'},
     'datetime':   {'type': 'date'},
 
